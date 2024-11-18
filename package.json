@@ -1,0 +1,25 @@
+{
+    "name": "spanish-tv-guide-api",
+    "version": "1.0.0",
+    "license": "CC BY-NC-ND",
+    "private": true,
+    "dependencies": {
+        "@types/node": "^22.9.0",
+        "lodash": "^4.17.21",
+        "luxon": "^3.5.0",
+        "monet": "^0.9.3",
+        "node-html-parser": "^6.1.13",
+        "ramda": "^0.30.1",
+        "vitest": "^2.1.5",
+        "wait-port": "^1.1.0"
+    },
+    "scripts": {
+        "pretest": "vercel dev & wait-port localhost:3000",
+        "test": "vitest run; lsof -i:3000 | awk 'NR > 1 {print $2}' | xargs kill -9"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.17.13",
+        "@types/luxon": "^3.4.2",
+        "@types/ramda": "^0.30.2"
+    }
+}

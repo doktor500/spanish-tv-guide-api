@@ -1,0 +1,1 @@
+export const toString = (value: string | undefined | null) => value?.trim() ?? "";
