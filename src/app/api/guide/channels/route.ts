@@ -1,10 +1,13 @@
+import { NextResponse } from "next/server";
 import { parse } from "node-html-parser";
-import { Channel } from "../../domain/channel";
-import { Program } from "../../domain/schedule";
-import { channelScraper } from "../../scrapper/channelScraper";
-import { channelScheduleScraper } from "../../scrapper/channelScheduleScraper";
+import { Channel } from "../../../../modules/domain/channel";
+import { Program } from "../../../../modules/domain/schedule";
+import { channelScraper } from "../../../../modules/scrapper/channelScraper";
+import { channelScheduleScraper } from "../../../../modules/scrapper/channelScheduleScraper";
 
 const BASE_URL = "https://www.movistarplus.es/programacion-tv";
+
+export const revalidate = 3600;
 
 export const GET = async () => {
   const channels = await fetchChannels();
@@ -12,13 +15,7 @@ export const GET = async () => {
     channels.map(async (channel) => ({ ...channel, schedule: await fetchChannelSchedule(channel)}))
   );
 
-  return new Response(
-    JSON.stringify(result), 
-    {
-      status: 200, 
-      headers: { "content-type": "application/json", 'Cache-Control': 's-maxage=3600' } 
-    }
-  );
+  return NextResponse.json(result);
 };
 
 const fetchChannels = async () => {

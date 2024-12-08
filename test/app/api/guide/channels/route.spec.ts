@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { DATE_PATTERN } from "../../../src/utils/dateTimeUtils";
+import { DATE_PATTERN } from "../../../../../src/modules/utils/dateTimeUtils";
 
 describe("spanish tv guide api", () => {
     const BASE_URL = "http://localhost:3000";

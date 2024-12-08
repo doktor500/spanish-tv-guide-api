@@ -6,7 +6,7 @@ import { toString } from "../utils/stringUtils";
 import { Program, Schedule } from "../domain/schedule";
 
 const CHANNEL_SCHEDULE_SELECTOR = "ul.program-info > li.fila > div";
-const CHANNEL_URL_SELECTOR = "a.j_ficha";
+const CHANNEL_URL_SELECTOR = "a";
 const CHANNEL_NAME_SELECTOR = "li.title";
 const CHANNEL_START_TIME_SELECTOR = "li.time";
 
@@ -20,11 +20,11 @@ const toChannelSchedule = (html: HTMLElement) => {
     return channelScheduleWithLiveProgram(fixedChannelSchedule);
 };
 
-const toProgram = (channelProgramEelement: HTMLElement): Program => {
+const toProgram = (channelProgramElement: HTMLElement): Program => {
     return {
-      url: toString(channelProgramEelement.querySelector(CHANNEL_URL_SELECTOR)?.getAttribute(CHANNEL_URL_ATTRIBUTE)),
-      name: toString(channelProgramEelement.querySelector(CHANNEL_NAME_SELECTOR)?.innerText),
-      startTime: parseTime(toString(channelProgramEelement.querySelector(CHANNEL_START_TIME_SELECTOR)?.innerText)),
+      url: toString(channelProgramElement.querySelector(CHANNEL_URL_SELECTOR)?.getAttribute(CHANNEL_URL_ATTRIBUTE)),
+      name: toString(channelProgramElement.querySelector(CHANNEL_NAME_SELECTOR)?.innerText),
+      startTime: parseTime(toString(channelProgramElement.querySelector(CHANNEL_START_TIME_SELECTOR)?.innerText)),
       isCurrentlyLive: false
     }
 };
