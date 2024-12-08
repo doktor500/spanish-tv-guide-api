@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import parse from "node-html-parser";
-import { toString } from "../../../../modules/utils/stringUtils";
-import { programDetailsScraper } from "../../../../modules/scrapper/programDetailsScraper";
+
+import { toString } from "@/modules/utils/stringUtils";
+import { programDetailsScraper } from "@/modules/scrapper/programDetailsScraper";
 
 export const revalidate = 3600;
 

@@ -1,6 +1,6 @@
 import { HTMLElement } from "node-html-parser";
 
-import { last } from "../utils/collectionUtils";
+import { last } from "@/modules/utils/collectionUtils";
 
 const CHANNEL_ICON_BASE_URL = "https://www.movistarplus.es/recorte/m-NEO/canal"
 

@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 
-import { DATE_PATTERN } from "../../../../../src/modules/utils/dateTimeUtils";
+import { Channel } from "@/modules/domain/channel";
+
+const DATE_PATTERN = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/;
 
 describe("spanish tv guide api", () => {
     const BASE_URL = "http://localhost:3000";
 
     it("returns a json response containing the list of channels", async () => {
-        const response = await fetch(`${BASE_URL}/api/guide/channels`).then(response => response.json());
+        const response = await fetch(`${BASE_URL}/api/guide/channels`).then(response => response.json()) as Channel[];
 
         expect(response).toContainEqual({
             url: "https://www.movistarplus.es/programacion-tv/TVE",

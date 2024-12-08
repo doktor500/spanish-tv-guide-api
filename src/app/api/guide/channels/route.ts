@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { parse } from "node-html-parser";
-import { Channel } from "../../../../modules/domain/channel";
-import { Program } from "../../../../modules/domain/schedule";
-import { channelScraper } from "../../../../modules/scrapper/channelScraper";
-import { channelScheduleScraper } from "../../../../modules/scrapper/channelScheduleScraper";
+import { Channel } from "@/modules/domain/channel";
+import { Program } from "@/modules/domain/schedule";
+import { channelScraper } from "@/modules/scrapper/channelScraper";
+import { channelScheduleScraper } from "@/modules/scrapper/channelScheduleScraper";
 
 const BASE_URL = "https://www.movistarplus.es/programacion-tv";
 

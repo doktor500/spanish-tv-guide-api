@@ -1,9 +1,9 @@
 import { HTMLElement } from "node-html-parser";
 
-import { now, parseTime, plusOneDay } from "../utils/dateTimeUtils";
-import { findLast, last, replace } from "../utils/collectionUtils";
-import { toString } from "../utils/stringUtils";
-import { Program, Schedule } from "../domain/schedule";
+import { now, parseTime, plusOneDay } from "@/modules/utils/dateTimeUtils";
+import { findLast, last, replace } from "@/modules/utils/collectionUtils";
+import { toString } from "@/modules/utils/stringUtils";
+import { Program, Schedule } from "@/modules/domain/schedule";
 
 const CHANNEL_SCHEDULE_SELECTOR = "ul.program-info > li.fila > div";
 const CHANNEL_URL_SELECTOR = "a";

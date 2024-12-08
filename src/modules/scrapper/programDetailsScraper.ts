@@ -1,7 +1,7 @@
 import { HTMLElement } from "node-html-parser";
 
-import { toString } from "../utils/stringUtils";
-import { last } from "../utils/collectionUtils";
+import { toString } from "@/modules/utils/stringUtils";
+import { last } from "@/modules/utils/collectionUtils";
 
 const PROGRAM_IMAGE_SELECTOR = "source";
 const PROGRAM_HEADLINE_SELECTOR = "h2";

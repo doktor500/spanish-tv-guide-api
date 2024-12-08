@@ -1,11 +1,12 @@
 import { describe, expect, it } from "vitest";
+import { Channel } from "@/modules/domain/channel";
 
 describe("spanish tv guide api", () => {
     const BASE_URL = "http://localhost:3000";
 
     it("returns a json response containing the program details", async () => {
-        const channelsResponse = await fetch(`${BASE_URL}/api/guide/channels`).then(response => response.json());
-        const programUrl = channelsResponse[0].schedule[0].url;
+        const response = await fetch(`${BASE_URL}/api/guide/channels`).then(response => response.json()) as Channel[];
+        const programUrl = response[0].schedule[0].url;
 
         const url = buildGetProgramDetailsUrl(BASE_URL, programUrl);
         const programResponse = await fetch(url).then(response => response.json());

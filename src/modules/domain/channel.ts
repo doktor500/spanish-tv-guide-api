@@ -1,4 +1,4 @@
-import { Program } from "./schedule";
+import { Program } from "@/modules/domain/schedule";
 
 export type Channel = {
   url: string;
