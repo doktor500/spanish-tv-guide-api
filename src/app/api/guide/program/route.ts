@@ -11,8 +11,8 @@ export const GET = async (request: Request) => {
 
     const programUrl = decodeURI(toString(searchParams.get("url")));
     const result = await fetchProgram(programUrl);
-    
-    return NextResponse.json(result);
+
+    return NextResponse.json(result, { headers: { "Cache-Control": "s-maxage=3600" }});
 };
 
 const fetchProgram = (url: string) => {

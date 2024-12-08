@@ -15,7 +15,7 @@ export const GET = async () => {
     channels.map(async (channel) => ({ ...channel, schedule: await fetchChannelSchedule(channel)}))
   );
 
-  return NextResponse.json(result);
+  return NextResponse.json(result, { headers: { "Cache-Control": "s-maxage=3600" }});
 };
 
 const fetchChannels = async () => {
