@@ -51,7 +51,7 @@ const channelScheduleWithLiveProgram = (programs: Program[]): Program[] => {
 const scheduleWithLiveProgram = (programs: Program[], currentProgram: Program): Program[] => {
     return replace(currentProgram)
         .in(programs)
-        .with({ ...currentProgram, isCurrentlyLive: true });
+        .with({ ...currentProgram, isCurrentlyLive: false });
 };
   
 export const channelScheduleScraper = { toChannelSchedule };
