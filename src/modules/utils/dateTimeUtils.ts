@@ -19,4 +19,4 @@ const currentDate = () => {
   return time.toISOString().substring(0, 11);
 }
 
-export { now, parseTime, plusOneDay };
+export { parseTime, plusOneDay };

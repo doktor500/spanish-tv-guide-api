@@ -20,8 +20,7 @@ describe("spanish tv guide api", () => {
         expect(response[0].schedule[0]).toEqual({
             url: expect.stringContaining("https://www.movistarplus.es"),
             name: expect.any(String),
-            startTime: expect.stringMatching(DATE_PATTERN),
-            isCurrentlyLive: expect.any(Boolean)
+            startTime: expect.stringMatching(DATE_PATTERN)
         });
     });
 }, 30000);
