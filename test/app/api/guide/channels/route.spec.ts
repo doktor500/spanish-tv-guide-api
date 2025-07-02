@@ -11,7 +11,7 @@ describe("spanish tv guide api", () => {
         const response = await fetch(`${BASE_URL}/api/guide/channels`).then(response => response.json()) as Channel[];
 
         expect(response).toContainEqual({
-            url: "https://www.movistarplus.es/programacion-tv/TVE",
+            url: "https://www.movistarplus.es/programacion-tv/tve",
             icon: "https://www.movistarplus.es/recorte/m-NEO/canal/TVE.png",
             name: "LA 1",
             schedule: expect.any(Array)
