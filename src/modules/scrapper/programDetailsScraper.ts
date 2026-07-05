@@ -3,11 +3,11 @@ import { HTMLElement } from "node-html-parser";
 import { toString } from "@/modules/utils/stringUtils";
 import { last } from "@/modules/utils/collectionUtils";
 
-const PROGRAM_IMAGE_SELECTOR = "source";
+const PROGRAM_IMAGE_SELECTOR = "div.cover > img";
 const PROGRAM_HEADLINE_SELECTOR = "h2";
 const PROGRAM_DESCRIPTION_SELECTOR = ".show-content > div.text";
 
-const PROGRAM_IMAGE_ATTRIBUTE = "srcset";
+const PROGRAM_IMAGE_ATTRIBUTE = "src";
 
 const toProgramDetails = (html: HTMLElement) => {
     const imageUrl = last(html.querySelectorAll(PROGRAM_IMAGE_SELECTOR))?.getAttribute(PROGRAM_IMAGE_ATTRIBUTE);

@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "license": "CC BY-NC-ND",
     "private": true,
+    "packageManager": "pnpm@11.9.0",
     "dependencies": {
         "@types/node": "^26.1.0",
         "lodash": "^4.18.1",
@@ -24,6 +25,7 @@
         "@types/luxon": "^3.7.2",
         "@types/ramda": "^0.32.0",
         "@types/react": "19.2.17",
-        "typescript": "6.0.3"
+        "typescript": "6.0.3",
+        "vite": "^8.1.3"
     }
 }
